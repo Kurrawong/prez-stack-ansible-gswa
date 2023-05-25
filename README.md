@@ -1,4 +1,4 @@
-# QLD Gov Dept Resources Ansible Prez Stack
+# GSWA Prez Stack
 
 An Ansible playbook and roles to manage Debian cloud VMs running the Prez Stack.
 
@@ -79,13 +79,13 @@ Run the roles in sequence for a fresh installation. The plays target the hosts w
 Note: modify the letsencrypt variables in [group_vars/webservers.yml](group_vars/webservers.yml) as required.
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t nginx.install
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t nginx.install --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
 
 #### Install podman.
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t podman.install
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t podman.install --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
 
 #### Install Qld Gov Dept Resource Prez UI.
@@ -93,7 +93,7 @@ ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t podman
 Note: modify the container image variable in [group_vars/webservers.yml](group_vars/webservers.yml) as required.
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez-ui.install
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez-ui.install --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
 
 #### Install Apache Jena Fuseki.
@@ -105,13 +105,15 @@ Fuseki's exposure to the public internet via nginx is controlled by the `nginx_e
 Fuseki's basic authentication details such as username and password can be changed by editing [group_vars/vault.yml](group_vars/vault.yml)
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t fuseki.install
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t fuseki.install --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
 
 #### Load initial data into Fuseki.
 
+This step is not done for GSWA Prez.
+
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t fuseki.load-initial-data
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t fuseki.load-initial-data --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
 
 #### Install Prez.
@@ -119,7 +121,7 @@ ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t fuseki
 Note: modify the Prez variables in [group_vars/webservers.yml](group_vars/webservers.yml) as required.
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez.install
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez.install --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
 
 #### Enable swap on target machine.
@@ -127,5 +129,5 @@ ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez.i
 Note: modify the swapfile variables in [group_vars/webservers.yml](group_vars/webservers.yml) as required.
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t swapfile.enable
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t swapfile.enable --private-key ~/OneDrive/VMs/gswa-prez.pem
 ```
