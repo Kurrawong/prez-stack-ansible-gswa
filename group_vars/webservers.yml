@@ -10,6 +10,10 @@ fuseki_image: ghcr.io/kurrawong/fuseki-geosparql:git-main-23a3a84d
 # a boolean value to control whether fuseki is accessible publicly via nginx
 nginx_expose_fuseki: true
 
+# list of public fuseki datasets
+public_fuseki_datasets:
+  - gsq
+
 # prez ui settings
 enabled_prezs: SpacePrez,VocPrez
 prez_api_base_url: https://api.gsq-prez.dev.kurrawong.ai
