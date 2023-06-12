@@ -21,6 +21,12 @@
         env:
           VOCPREZ_SPARQL_ENDPOINT: http://0.0.0.0:3030/gsq/sparql
           SPACEPREZ_SPARQL_ENDPOINT: http://0.0.0.0:3030/gsq/sparql
+          VOCPREZ_SPARQL_UPDATE: http://0.0.0.0:3030/gsq/update
+          SPACEPREZ_SPARQL_UPDATE: http://0.0.0.0:3030/gsq/update
+          VOCPREZ_SPARQL_HTTP_STORE: http://0.0.0.0:3030/gsq/data
+          SPACEPREZ_SPARQL_HTTP_STORE: http://0.0.0.0:3030/gsq/data
+          VOCPREZ_SPARQL_USERNAME: "{{ fuseki_user }}"
+          VOCPREZ_SPARQL_PASSWORD: "{{ fuseki_password }}"
         state: present
         generate_systemd:
           path: /etc/systemd/system/
