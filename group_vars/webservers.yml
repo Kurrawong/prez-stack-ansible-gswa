@@ -1,9 +1,9 @@
 # letsencrypt
 letsencrypt_email: kurrawongai@gmail.com
-domain_name: gsq-prez.dev.kurrawong.ai,api.gsq-prez.dev.kurrawong.ai
+domain_name: gswa.dev.kurrawong.ai,api.gswa.dev.kurrawong.ai
 
 # container images
-prez_ui_image: ghcr.io/kurrawong/gsq-prez-ui:git-main-391efcc3
+prez_ui_image: ghcr.io/kurrawong/gswa-prez-ui:git-main-f91cdf10 # DMIRS: ghcr.io/kurrawong/gswa-prez-ui:git-e9373540
 prez_image: ghcr.io/rdflib/prez:3.3.0
 fuseki_image: ghcr.io/kurrawong/fuseki-geosparql:git-main-e642d849
 
@@ -15,8 +15,8 @@ public_fuseki_datasets:
   - gsq
 
 # prez ui settings
-enabled_prezs: SpacePrez,VocPrez
-prez_api_base_url: https://api.gsq-prez.dev.kurrawong.ai
+enabled_prezs: VocPrez
+prez_api_base_url: https://api.gswa.dev.kurrawong.ai
 
 # swapfile
 swap_file_path: /swapfile
