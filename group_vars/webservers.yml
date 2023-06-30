@@ -5,10 +5,14 @@ domain_name: gswa.dev.kurrawong.ai,api.gswa.dev.kurrawong.ai
 # container images
 prez_ui_image: ghcr.io/kurrawong/gswa-prez-ui:git-main-61f74301 # DMIRS: ghcr.io/kurrawong/gswa-prez-ui:git-e9373540
 prez_image: ghcr.io/rdflib/prez:3.0.9
-fuseki_image: ghcr.io/kurrawong/fuseki-geosparql:git-main-23a3a84d
+fuseki_image: ghcr.io/kurrawong/fuseki-geosparql:git-main-e642d849
 
 # a boolean value to control whether fuseki is accessible publicly via nginx
 nginx_expose_fuseki: true
+
+# list of public fuseki datasets
+public_fuseki_datasets:
+  - vocabs
 
 # prez ui settings
 enabled_prezs: VocPrez

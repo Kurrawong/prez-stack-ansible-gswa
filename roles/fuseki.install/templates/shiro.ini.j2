@@ -36,5 +36,13 @@ admin={{ fuseki_password }}
 ## or to allow any access.
 ##/$/** = anon
 
+# Public endpoints for read-only sparql and HTTP store protocol /{ds}/sparql
+# Use the more specific path since /{ds} can be used to perform updates using the HTTP storep rotocol
+{% for dataset in public_fuseki_datasets %}
+/{{ dataset }}/sparql = anon
+/{{ dataset }}/get = anon
+{% endfor %}
+
 # Everything else
-/**=anon
+#/**=anon
+/** = authcBasic,user[admin]
