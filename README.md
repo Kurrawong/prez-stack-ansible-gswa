@@ -93,7 +93,7 @@ ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t podman
 Note: modify the container image variable in [group_vars/webservers.yml](group_vars/webservers.yml) as required.
 
 ```
-ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez-ui.install --private-key ~/OneDrive/VMs/gswa-prez.pem
+ansible-playbook -i hosts --vault-password-file ./ansiblepass prez.yml -t prez-ui.install
 ```
 
 #### Install Apache Jena Fuseki.
