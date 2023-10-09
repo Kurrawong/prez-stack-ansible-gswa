@@ -1,0 +1,38 @@
+# letsencrypt
+letsencrypt_email: kurrawongai@gmail.com
+web_domain_name: vocabulary.gswa.kurrawong.ai
+api_domain_name: api.vocabulary.gswa.kurrawong.ai
+domain_name: "{{ web_domain_name }},{{ api_domain_name }}"
+
+# container images
+prez_ui_image: ghcr.io/kurrawong/gswa-prez-ui:git-main-72c2cb98 # DMIRS: ghcr.io/kurrawong/gswa-prez-ui:git-e9373540
+#prez_image: docker.io/daveragh/prez:0.0.1  #ghcr.io/rdflib/prez:3.5.0
+prez_image: ghcr.io/rdflib/prez:3.6.0
+fuseki_image: ghcr.io/kurrawong/fuseki-geosparql:git-main-e642d849
+
+# a boolean value to control whether fuseki is accessible publicly via nginx
+nginx_expose_fuseki: true
+
+# list of public fuseki datasets
+public_fuseki_datasets:
+  - vocabs
+
+# prez ui settings
+enabled_prezs: VocPrez
+prez_api_base_url: https://{{ api_domain_name }}
+
+# swapfile
+swap_file_path: /swapfile
+# Use any of the following suffixes
+# c=1
+# w=2
+# b=512
+# kB=1000
+# K=1024
+# MB=1000*1000
+# M=1024*1024
+# xM=M
+# GB=1000*1000*1000
+# G=1024*1024*1024
+swap_file_size: 4G
+swappiness: 1

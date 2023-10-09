@@ -1,11 +1,11 @@
 server {
-    server_name api.gswa.dev.kurrawong.ai;
+    server_name {{ api_domain_name }};
 
     include /etc/nginx/prez.conf;
 }
 
 server {
-    server_name gswa.dev.kurrawong.ai;
+    server_name {{ web_domain_name }};
 
     {% if nginx_expose_fuseki %}
     include /etc/nginx/fuseki.conf;
