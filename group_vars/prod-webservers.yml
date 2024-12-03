@@ -5,7 +5,7 @@ api_domain_name: api.vocabulary.gswa.kurrawong.ai
 domain_name: "{{ web_domain_name }},{{ api_domain_name }}"
 
 # container images
-prez_ui_image: ghcr.io/kurrawong/gswa-prez-ui:git-main-4dfca848
+prez_ui_image: ghcr.io/kurrawong/gswa-prez-ui:git-main-8b38aa4f
 prez_image: ghcr.io/rdflib/prez:3.8.4
 fuseki_image: ghcr.io/kurrawong/fuseki-geosparql:git-main-e642d849
 
