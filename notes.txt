@@ -1,11 +1,11 @@
 python -m venv venv
 source venv/bin/activate
 
-ssh-add ~/.ssh/gswa-prez.pem 
+ssh-add ~/.ssh/gswa-prez.pem
 
 ssh to container:
 - ssh admin@gswa.dev.kurrawong.ai
-- ssh api.vocabulary.gswa.kurrawong.ai 
+- ssh admin@api.vocabulary.gswa.kurrawong.ai 
 
 change config:
 ansible-vault edit group_vars/prod-vault.yml --vault-password-file ./ansiblepass  
